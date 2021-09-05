@@ -118,7 +118,7 @@ SELECT CASE WEEKDAY(birthday_at) WHEN 0 THEN 'Monday' WHEN 1 THEN 'Tuesday' WHEN
 -- Выведем конкатенированные данные с разделитилем в формате даты в столбцы day и total
 SELECT DATE_FORMAT(DATE(CONCAT_WS('-', YEAR(NOW()), MONTH(birthday_at), DAY(birthday_at))), '%W') AS day, COUNT(*) AS total FROM users GROUP BY day ORDER BY total DESC;
   
-/* Задание 3: Подсчитайте произведение чисел в столбце таблицы
+/* Задание 3: Подсчитайте произведение чисел в столбце таблицы*/
 
 -- Если я правильно поняла задание. Для примера возьмём таблицу storehouses_products
 SELECT exp(sum(ln(value))) FROM storehouses_products; 
